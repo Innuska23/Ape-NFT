@@ -1,10 +1,19 @@
+import classNames from "classnames";
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <div className="font-[Biro Script Plus Bold US] w-[1408px] h-[720px] shadow justify-center items-center inline-flex">
+    <div
+      className={classNames(
+        "font-[Biro Script Plus Bold US] m-auto flex justify-center flex-col min-w-[320px] max-w-[480px]",
+        "md:min-w-[768px]",
+        "xl:min-w-[1280px]"
+      )}
+    >
       <Header />
+      <Footer />
     </div>
   );
 }

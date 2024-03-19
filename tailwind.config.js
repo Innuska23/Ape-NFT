@@ -14,9 +14,9 @@ export default {
         "right-grotesk": ["Right Grotesk", "sans-serif"],
       },
       screens: {
-        mobile: "360px",
-        tablet: "768px",
-        laptop: "1408px",
+        sm: { min: "360px", max: "480px" },
+        md: { min: "768px" },
+        xl: { min: "1280px" },
       },
     },
   },
