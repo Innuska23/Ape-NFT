@@ -18,6 +18,12 @@ export default {
         md: { min: "768px" },
         xl: { min: "1280px" },
       },
+      plugins: [
+        require("tailwindcss-animate"),
+        //  ({
+        //   classes: ["animate-marquee"],
+        // }),
+      ],
     },
   },
   plugins: [],
