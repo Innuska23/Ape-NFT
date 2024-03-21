@@ -70,13 +70,13 @@ const BurgerLink = ({ color = "black", closeMenu, isForModal }) => {
       <BurgerLinkItem
         color={color}
         Icon={LogomarIcon}
-        href={"/"}
+        href={"/https://opensea.io/"}
         aria-label="Visit company logomar page"
       />
       <BurgerLinkItem
         color={color}
         Icon={OpenseaIcon}
-        href={"https://opensea.io/"}
+        href={"https://twitter.com/"}
         aria-label="Visit company opensea page"
       />
     </div>

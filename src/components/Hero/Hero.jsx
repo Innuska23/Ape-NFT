@@ -100,7 +100,7 @@ const Hero = () => {
                 <button
                   className={classNames(
                     "text-white  text-base font-black font-right-grotesk leading-[19px]",
-                    "md:text-black",
+                    "md:text-black md:hover:text-white",
                     "xl:text-[28px] xl:leading-[34px]"
                   )}
                 >

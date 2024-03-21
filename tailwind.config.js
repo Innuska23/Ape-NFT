@@ -13,10 +13,14 @@ export default {
         "messina-sans-mono-book": ["Messina Sans Mono Book", "monospace"],
         "right-grotesk": ["Right Grotesk", "sans-serif"],
       },
+      colors: {
+        "my-custom-color": "#DC3B5A",
+      },
       screens: {
         sm: { min: "360px", max: "480px" },
         md: { min: "768px" },
         xl: { min: "1280px" },
+        custom: { min: "480px", max: "768px" },
       },
       plugins: [
         require("tailwindcss-animate"),

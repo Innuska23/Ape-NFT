@@ -22,12 +22,13 @@ const Header = () => {
           "xl:h-[677px] xl:rounded-3xl"
         )}
       >
-        <div className="flex">
+        <div className={classNames("flex", "xl:pl-[24px] xl:pt-[39px]")}>
           <a href="/">
             <img
               srcSet={`${logoSm} 360w, ${logoMd} 768w, ${logoXl} 1280w`}
-              sizes="(max-width: 1179px) 360px, (max-width: 1399px) 1280px"
-              // src={srcSet}
+              // srcSet={`${logoSm} 360w, ${logoMd} 768w, ${logoXl} 1280w`}
+              sizes="(min-width: 360px) 360px, (min-width: 768px) 768px, (min-width: 1280px) 1280px, 100vw"
+              src={logoSm}
               className={classNames(
                 "pt-[16px] pl-[8px] w-[48px] h-[32px]",
                 "md:pl-[20px] md:absolute",

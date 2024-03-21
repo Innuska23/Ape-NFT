@@ -3,6 +3,8 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
+import MindMap from "./components/MindMap/MindMap";
+import Faq from "./components/FAQ/Faq";
 // import Hero from "./components/Hero/Hero";
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
       <Header />
       {/* <Hero /> */}
       <About />
+      <MindMap />
+      <Faq />
       <Footer />
     </div>
   );
