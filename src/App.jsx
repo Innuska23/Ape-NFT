@@ -5,7 +5,9 @@ import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import MindMap from "./components/MindMap/MindMap";
 import Faq from "./components/FAQ/Faq";
-// import Hero from "./components/Hero/Hero";
+import Hero from "./components/Hero/Hero";
+import Arts from "./components/Arts/Arts";
+import ContactUs from "./components/ContactUs/ContactUs";
 
 function App() {
   return (
@@ -16,11 +18,21 @@ function App() {
         "xl:min-w-[1280px]"
       )}
     >
-      <Header />
-      {/* <Hero /> */}
+      <div
+        className={classNames(
+          "mt-[54px] mx-[8px] h-[542px] bg-rose-500 rounded-xl pb-[19px] relative",
+          "md:h-[421px]",
+          "xl:h-[677px] xl:pr-[16px]"
+        )}
+      >
+        <Header />
+        <Hero />
+      </div>
       <About />
       <MindMap />
       <Faq />
+      <Arts />
+      <ContactUs />
       <Footer />
     </div>
   );

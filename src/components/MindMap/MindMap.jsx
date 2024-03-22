@@ -33,30 +33,45 @@ const MindMap = () => {
       >
         MIND map
       </h2>
+
       <Slider ref={slider} {...settings} className="mt-[24px] md:hidden">
-        {MindMapsCards.map(({ title, className, imgSrc, subtitle }, index) => {
-          return (
+        {MindMapsCards.map(
+          ({ title, className, imgSrc, subtitle, href }, index) => {
+            return (
+              <MindMapListItem
+                key={index}
+                title={title}
+                className={className}
+                imgSrc={imgSrc}
+                subtitle={subtitle}
+                href={href}
+              />
+            );
+          }
+        )}
+      </Slider>
+
+      <div
+        className={classNames(
+          "hidden",
+          "md:grid md:grid-cols-2 md:gap-6 md:px-[88px] md:mt-[40px]",
+          "xl:px-[124px] xl:mt-[80px]"
+        )}
+      >
+        {MindMapsCards.map(
+          ({ title, className, imgSrc, subtitle, href }, index) => (
             <MindMapListItem
               key={index}
               title={title}
               className={className}
               imgSrc={imgSrc}
               subtitle={subtitle}
+              href={href}
             />
-          );
-        })}
-      </Slider>
-      <div className="sm:hidden custom:hidden md:visible w-full h-[242px] mt-[24px] pl-[72px] justify-start items-start gap-6 inline-flex overflow-hidden md:mt-[40px] md:w-[592px] md:h-[508px] md:pl-0 md:flex-wrap md:leading-none md:text-left md:tracking-normal xl:w-[1032px] xl:h-[984px] xl:mt-[80px] xl:text-left">
-        {MindMapsCards.map(({ title, className, imgSrc, subtitle }, index) => (
-          <MindMapListItem
-            key={index}
-            title={title}
-            className={className}
-            imgSrc={imgSrc}
-            subtitle={subtitle}
-          />
-        ))}
+          )
+        )}
       </div>
+
       <div className="w-[150px] h-6 mt-[24px] justify-center items-center gap-12 inline-flex md:hidden">
         <button
           onClick={() => slider?.current?.slickPrev()}

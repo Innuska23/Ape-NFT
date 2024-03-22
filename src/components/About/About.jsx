@@ -3,10 +3,10 @@ import { getImageSet } from "../../utils/image";
 
 import Banner from "../Banner/Banner";
 
-import closeIcon from "../../assets/close.svg";
-import aboutSm from "../../assets/about/about-sm.png";
-import aboutMd from "../../assets/about/about-md.png";
-import aboutXl from "../../assets/about/about-xl.png";
+import closeIcon from "../../images/close.svg";
+import aboutSm from "../../images/about/about-sm.png";
+import aboutMd from "../../images/about/about-md.png";
+import aboutXl from "../../images/about/about-xl.png";
 
 const aboutImageSet = getImageSet(
   [aboutSm, aboutMd, aboutXl],
@@ -120,9 +120,9 @@ const About = () => {
           )}
         >
           <img
-            sizes="(max-width: 480px) 480w, (max-width: 1279px) 768w, (max-width: 1400px) 1280w"
             srcSet={aboutImageSet}
-            src={aboutImageSet}
+            src={aboutSm}
+            sizes="(min-width: 360px) 216px, (min-width: 1279px) 313px, (min-width: 1280px) 492px"
             className={classNames(
               "w-[216px] h-[292px]",
               "md:w-[313px] md:h-[422px]",

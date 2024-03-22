@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
-import upLeftArrow from "../../assets/up-left-arrow.svg";
+import upLeftArrow from "../../images/up-left-arrow.svg";
 
 export const MindMapsCards = [
   {
@@ -26,10 +26,11 @@ export const MindMapsCards = [
     title: "Learn more in mind map",
     imgSrc: upLeftArrow,
     className: "bg-rose-500",
+    href: "https://www.mindmup.com/",
   },
 ];
 
-const MindMapListItem = ({ title, subtitle, className, imgSrc }) => {
+const MindMapListItem = ({ title, subtitle, className, imgSrc, href }) => {
   return (
     <>
       <div
@@ -40,17 +41,19 @@ const MindMapListItem = ({ title, subtitle, className, imgSrc }) => {
           "xl:w-[504px] xl:h-[480px] xl:p-6 xl:rounded-3xl"
         )}
       >
-        {imgSrc && (
-          <img
-            src={imgSrc}
-            alt="upLeftArrow"
-            className="cursor-pointer w-[24px] h-[24px] md:w-[48px] md:h-[48px] xl:w-[64px] xl:h-[64px]"
-          />
+        {imgSrc && href && (
+          <a href={href} target="_blank">
+            <img
+              src={imgSrc}
+              alt="upLeftArrow"
+              className="cursor-pointer w-[24px] h-[24px] md:w-[48px] md:h-[48px] xl:w-[64px] xl:h-[64px]"
+            />
+          </a>
         )}
         <p
           className={classNames(
             "w-48 text-white text-xs font-normal font-messina-sans-mono uppercase leading-[14px]",
-            "md:w-32",
+            "md:w-32 md:text-right",
             "xl:w-64 xl:text-2xl xl:leading-[29px]"
           )}
         >
@@ -59,8 +62,8 @@ const MindMapListItem = ({ title, subtitle, className, imgSrc }) => {
         <p
           className={classNames(
             "w-48 text-white text-[32px] font-black font-right-grotesk uppercase",
-            "md:w-[236px]",
-            "xl:w-[456px] xl:text-[64px] xl:leading-[64px] xl:tracking-normal xl:text-left"
+            "md:w-[236px] md:text-left",
+            "xl:w-[456px] xl:text-[64px] xl:leading-[64px] xl:tracking-normal"
           )}
         >
           {title}
@@ -75,6 +78,7 @@ MindMapListItem.propTypes = {
   subtitle: PropTypes.string,
   className: PropTypes.string,
   imgSrc: PropTypes.string,
+  href: PropTypes.string,
 };
 
 export default MindMapListItem;

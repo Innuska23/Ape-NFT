@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <footer
       className={classNames(
-        "flex justify-center",
+        "flex justify-center mt-[60px]",
         "pb-[24px] pr-[72px] pl-[72px]",
-        "md:pb-[40px] md:pr-[247px] md:pl-[248px]",
-        "xl:pr-[0px] xl:pl-[0px] xl:pb-[24px]"
+        "md:pb-[40px] md:pr-[247px] md:pl-[248px] md:mt-[80px]",
+        "xl:pr-[0px] xl:pl-[0px] xl:pb-[24px] xl:mt-[120px]"
       )}
     >
       <p

@@ -1,7 +1,7 @@
-import faq1md from "../../assets/faq/faq-1md.png";
-import faq2md from "../../assets/faq/faq-2md.png";
-import faq3md from "../../assets/faq/faq-3md.png";
-import faq4md from "../../assets/faq/faq-4md.png";
+import faq1md from "../../images/faq/faq-1md.png";
+import faq2md from "../../images/faq/faq-2md.png";
+import faq3md from "../../images/faq/faq-3md.png";
+import faq4md from "../../images/faq/faq-4md.png";
 
 export const FaqList = [
   {

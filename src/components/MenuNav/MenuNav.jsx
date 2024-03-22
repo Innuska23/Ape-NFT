@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import MenuNavLink from "../../MenuNavLink/MenuNavLink";
 import classNames from "classnames";
+
+import MenuNavLink from "../../MenuNavLink/MenuNavLink";
 import BurgerModal from "../BurgerModal/BurgerModal";
 
 const MenuNav = () => {
@@ -37,6 +38,7 @@ const MenuNav = () => {
           {!isShowMenu ? "Menu" : "Close"}
         </button>
       </div>
+
       {isShowMenu && isMobileScreen && (
         <BurgerModal onClose={handleClickOpeMenu} />
       )}

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import logoMobile from "../../assets/logo-white.svg";
+import logoMobile from "../../images/logo-white.svg";
 import BurgerLink from "../BurgerLink/BurgerLink";
 
 const ListItemModal = ({ href, text, onClose }) => {
