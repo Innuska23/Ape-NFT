@@ -52,7 +52,7 @@ const BurgerLink = ({ color = "black", closeMenu, isForModal }) => {
         "flex-col justify-start items-start gap-2 inline-flex absolute cursor-pointer",
         "w-12 top-[64px] right-[8px] h-[216px]",
         "md:top-[68px] md:right-[12px]",
-        "xl:w-20 xl:h-20 xl:top-[120px] xl:[16px] xl:gap-4"
+        "xl:w-20 xl:h-20 xl:top-[90px] xl:right-0 xl:gap-4"
       )}
     >
       {isForModal && (

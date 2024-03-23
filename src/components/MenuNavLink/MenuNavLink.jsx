@@ -37,7 +37,7 @@ const MenuNavLink = ({ onClick }) => {
       <nav
         className={classNames(
           "absolute right-[12px] top-[12px] z-1",
-          "xl:block xl:top-[24px] xl:right-[16px]"
+          "xl:block xl:top-[-10px] xl:right-0"
         )}
       >
         <ul

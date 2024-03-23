@@ -34,7 +34,7 @@ const Arts = () => {
         },
       },
       {
-        breakpoint: 1600,
+        breakpoint: 2000,
         settings: {
           slidesToShow: 4,
           infinite: false,

@@ -44,9 +44,12 @@ const MindMapListItem = ({ title, subtitle, className, imgSrc, href }) => {
         {imgSrc && href && (
           <a href={href} target="_blank">
             <img
-              src={imgSrc}
+              src={upLeftArrow}
               alt="upLeftArrow"
-              className="cursor-pointer w-[24px] h-[24px] md:w-[48px] md:h-[48px] xl:w-[64px] xl:h-[64px]"
+              className={classNames(
+                "cursor-pointer w-[24px] h-[24px] md:w-[48px] md:h-[48px] xl:w-[64px] xl:h-[64px]",
+                "transition-transform duration-300 ease-in-out transform hover:scale-110"
+              )}
             />
           </a>
         )}
