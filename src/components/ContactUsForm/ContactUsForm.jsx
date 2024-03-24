@@ -13,8 +13,12 @@ const ContactUsForm = () => {
   };
 
   const validationSchema = Yup.object({
-    discord: Yup.string().required("Wrong discord"),
-    address: Yup.string().required("Wrong ADDRESS"),
+    discord: Yup.string()
+      .required("Wrong discord")
+      .matches(/^@[A-Za-z]{8}$/, "Wrong discord, be 8 characters and start @"),
+    address: Yup.string()
+      .required("Wrong ADDRESS")
+      .matches(/^[A-Za-z0-9]{19}$/, "Wrong ADDRESS, 19 characters"),
   });
 
   const [submissionStatus, setSubmissionStatus] = useState(null);
@@ -54,8 +58,8 @@ const ContactUsForm = () => {
         <Form
           className={classNames(
             "w-full flex flex-col gap-y-4 mt-[16px]",
-            "md:w-[248px]md:mt-[24px]",
-            "xl:w-[397px] xl:mt-[80px] xl:gap-y-6"
+            "md:w-[248px] md:mt-[24px]",
+            "xl:w-[397px] xl:mt-[40px] xl:gap-y-6"
           )}
         >
           {submissionStatus === "success" && (
@@ -78,9 +82,19 @@ const ContactUsForm = () => {
               name="discord"
               placeholder="@username"
               disabled={isSubmitting}
-              className={`w-full text-white pl-[24px] bg-opacity-25 text-opacity-25 border uppercase border-stone-900 bg-stone-900 rounded-br-lg text-xs xl:rounded-br-xl  focus:border-red-900 xl:text-base ${
-                errors.discord && touched.discord ? "border-red-500" : ""
-              }`}
+              className={classNames(
+                "w-full pl-[24px] bg-opacity-25 placeholder:opacity-25",
+                "border rounded-tr-lg uppercase  bg-stone-900 ",
+                "rounded-br-lg text-xs xl:rounded-br-xl xl:text-base xl:rounded-tr-xl",
+                "outline-none",
+                {
+                  "text-white border-stone-900": !(
+                    errors.discord && touched.discord
+                  ),
+                  "border-rose-500 text-my-custom-color":
+                    errors.discord && touched.discord,
+                }
+              )}
               onClick={handleFieldClick}
             />
             {errors.discord && touched.discord && (
@@ -110,15 +124,25 @@ const ContactUsForm = () => {
               name="address"
               placeholder="Wallet address"
               disabled={isSubmitting}
-              className={`w-full text-white pl-[24px] bg-opacity-25 text-opacity-25 border uppercase border-stone-900 bg-stone-900 rounded-br-lg text-xs xl:rounded-br-xl  focus:border-red-900 xl:text-base ${
-                errors.address && touched.address ? "border-red-500" : ""
-              }`}
+              className={classNames(
+                "w-full pl-[24px] bg-opacity-25 placeholder:opacity-25",
+                "border uppercase bg-stone-900 ",
+                "rounded-br-lg rounded-tr-lg text-xs xl:rounded-br-xl xl:text-base xl:rounded-tr-xl",
+                "outline-none",
+                {
+                  "text-white border-stone-900": !(
+                    errors.address && touched.address
+                  ),
+                  "border-rose-500 text-my-custom-color":
+                    errors.address && touched.address,
+                }
+              )}
               onClick={handleFieldClick}
             />
             {errors.address && touched.address && (
               <div
                 className={classNames(
-                  "absolute right-0 bottom-[-13px] text-[10px] font-normal font-messina-sans-mono uppercase leading-3 text-red-500",
+                  "absolute right-0 bottom-[-13px] text-[10px] font-normal font-messina-sans-mono uppercase leading-3 text-rose-500",
                   "xl:text-xs xl:bottom-[-18px]"
                 )}
               >

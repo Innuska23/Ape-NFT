@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const defaultFill = "#1E1E1E";
 
-export const LogoIcon = ({ color }) => {
+export const LogoIcon = ({ color, ...rest }) => {
   const fills = {
     black: defaultFill,
     white: "white",
@@ -18,6 +18,7 @@ export const LogoIcon = ({ color }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="xl:h-[50px] xl:w-[72px]"
+      {...rest}
     >
       <g clipPath="url(#clip0_51_1141)">
         <path
@@ -111,5 +112,5 @@ export const LogoIcon = ({ color }) => {
 };
 
 LogoIcon.propTypes = {
-  color: PropTypes.oneOf(["black", "white"]).isRequired,
+  color: PropTypes.oneOf(["black", "white"]),
 };

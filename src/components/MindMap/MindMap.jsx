@@ -5,7 +5,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import MindMapListItem, { MindMapsCards } from "./MindMapListItem";
+import { MIND_MAPS_CARDS } from "../../constants";
+import MindMapListItem from "../MindMapListItem/MindMapListemItem";
 
 const MindMap = () => {
   const slider = React.useRef(null);
@@ -23,7 +24,7 @@ const MindMap = () => {
   return (
     <div
       id="m-map"
-      className={classNames("pt-[60px]", "md:pt-[80px]", "xl:pt-[120px]")}
+      className={classNames("mt-[60px]", "md:mt-[80px]", "xl:mt-[120px]")}
     >
       <h2
         className={classNames(
@@ -35,7 +36,7 @@ const MindMap = () => {
       </h2>
 
       <Slider ref={slider} {...settings} className="mt-[24px] md:hidden">
-        {MindMapsCards.map(
+        {MIND_MAPS_CARDS.map(
           ({ title, className, imgSrc, subtitle, href }, index) => {
             return (
               <MindMapListItem
@@ -58,7 +59,7 @@ const MindMap = () => {
           "xl:px-[124px] xl:mt-[80px]"
         )}
       >
-        {MindMapsCards.map(
+        {MIND_MAPS_CARDS.map(
           ({ title, className, imgSrc, subtitle, href }, index) => (
             <MindMapListItem
               key={index}

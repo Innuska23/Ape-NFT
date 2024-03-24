@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import logoMobile from "../../images/logo-white.svg";
+import { LogoIcon } from "../icons/LogoIcon";
 import BurgerLink from "../BurgerLink/BurgerLink";
+import useHover from "../hook/useHover";
 
 const ListItemModal = ({ href, text, onClose }) => {
   return (
@@ -10,34 +11,46 @@ const ListItemModal = ({ href, text, onClose }) => {
       <a
         href={href}
         className={classNames(
-          "font-semibold font-messina-sans-mono hover:text-gray-400"
+          "font-semibold font-messina-sans-mono hover:my-custom-color"
         )}
         onClick={onClose}
       >
-        {text}
+        <span className="hover:text-my-custom-color">{text}</span>
       </a>
     </li>
   );
 };
 
 const BurgerModal = ({ onClose }) => {
+  const [isHovered, handles] = useHover();
+
   return (
     <div
       className={classNames(
         "fixed top-0 left-0 w-full h-full bg-black z-50 flex justify-center",
-        "pb-[24px] pt-[130px]"
+        "pb-[24px] pt-[130px] px-[8px]"
       )}
     >
       <div className={classNames("absolute top-[70px] left-[16px]")}>
-        <a href="/">
-          <img src={logoMobile} alt="logo" />
+        <a href="./">
+          <LogoIcon
+            className={classNames("transition-colors duration-300")}
+            alt="logo"
+            color={isHovered ? "black" : "white"}
+            {...handles}
+          />
         </a>
       </div>
 
-      <div className={classNames("bg-black rounded-lg w-full text-white")}>
+      <div
+        className={classNames(
+          "bg-black rounded-lg w-full text-white px-[16px]"
+        )}
+      >
         <nav
           className={classNames(
-            "w-[121px] flex-col justify-start items-center gap-4 inline-flex"
+            "w-[121px] flex-col justify-start items-center gap-4 inline-flex",
+            "hover:text-my-custom-color"
           )}
         >
           <ul className={classNames("space-y-4 gap-4 text-2xl w-full")}>
@@ -64,7 +77,12 @@ const BurgerModal = ({ onClose }) => {
           </p>
         </div>
 
-        <BurgerLink color="white" closeMenu={onClose} isForModal />
+        <BurgerLink
+          className="right-[16px] h-[216px]"
+          color="white"
+          closeMenu={onClose}
+          isForModal
+        />
       </div>
     </div>
   );
@@ -79,7 +97,5 @@ ListItemModal.propTypes = {
 };
 
 BurgerModal.propTypes = {
-  onClose: (BurgerModal.propTypes = {
-    onClose: PropTypes.func,
-  }.func),
+  onClose: PropTypes.func.isRequired,
 };

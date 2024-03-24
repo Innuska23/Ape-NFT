@@ -9,7 +9,11 @@ const BurgerMenu = () => {
   return (
     <div>
       <MenuNav />
-      <BurgerLink closeMenu={handleCloseMenu} isForModal={false} />
+      <BurgerLink
+        closeMenu={handleCloseMenu}
+        isForModal={false}
+        className="right-[8px] h-[216px]"
+      />
     </div>
   );
 };

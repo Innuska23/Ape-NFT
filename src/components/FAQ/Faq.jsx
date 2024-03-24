@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classNames from "classnames";
 
-import { FaqList } from "./FaqList";
+import { FAQ_LIST } from "../../constants";
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(0);
@@ -16,7 +16,7 @@ const Faq = () => {
       className={classNames(
         "mt-[60px] px-[72px]",
         "md:px-[88px] md:mt-[80px]",
-        "xl:mt-[120px] xl:px-[120px]"
+        "xl:mt-[120px] xl:px-[124px]"
       )}
     >
       <h2>
@@ -24,7 +24,7 @@ const Faq = () => {
           onClick={() => setOpenIndex(null)}
           className={classNames(
             "text-white text-[44px] font-black font-right-grotesk uppercase leading-10",
-            "md:cursor-pointer",
+            "md:cursor-pointer md:text-[80px] ",
             "xl:text-[160px] xl:leading-[160px]"
           )}
         >
@@ -38,7 +38,7 @@ const Faq = () => {
           "xl:gap-[24px] xl:mt-[80px]"
         )}
       >
-        {FaqList.map((faq, index) => (
+        {FAQ_LIST.map((faq, index) => (
           <li key={index} className="flex">
             <div
               className={classNames(
@@ -56,12 +56,18 @@ const Faq = () => {
                   )}
                 >
                   <img
-                    srcSet={faq.imageSrc}
-                    src={faq.imageSrc}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 183px, 514px"
+                    srcSet={`
+                    ${faq.imageSrc[0]} 183w,
+                    ${faq.imageSrc[1]} 366w,
+                    ${faq.imageSrc[0]} 270w,
+                    ${faq.imageSrc[1]} 514w,
+                    `}
+                    src={faq.imageSrc[0]}
                     alt={faq.alt}
                     className={classNames(
                       "sm:hidden",
-                      // "max-w-[768px]:hidden",
                       "md:visibility md:absolute md:w-[148px] md:h-[183px] md:rounded-2xl",
                       "xl:w-[306px] xl:h-[282px] xl:rounded-3xl"
                     )}
@@ -73,20 +79,30 @@ const Faq = () => {
                 <button
                   onClick={() => handleFaqClick(index)}
                   className={classNames(
-                    "w-full block text-white text-xl font-black font-right-grotesk uppercase leading-tight pr-[8px] text-left hover:text-my-custom-color focus:text-my-custom-color",
+                    "w-full block text-xl font-black font-right-grotesk uppercase leading-tight pr-[8px] text-left",
                     "md:w-[339px] md:text-[32px] md:pr-0",
                     "xl:w-[635px] xl:text-[64px] xl:leading-[64px]",
-                    "flex",
-                    openIndex === index ? "text-my-custom-color" : ""
+                    "flex group",
+                    {
+                      "text-white hover:text-my-custom-color":
+                        openIndex !== index,
+                      "text-my-custom-color hover:text-white":
+                        openIndex === index,
+                    }
                   )}
                 >
                   <span
                     className={classNames(
                       "min-w-[30px]",
                       "text-xs font-normal font-biro-script-plus leading-tight white-space-nowrap ml-[8px] w-[23px] h-[20px] display-inline-block vertical-align-baseline mt-[4px]",
-                      openIndex === index ? "text-white" : "text-rose-500",
-                      "md:hover:text-white md:focus:text-white md:mt-[10px] md:mr-[6px]",
-                      "xl:text-2xl xl:min-w-[50px] xl:mr-[25px]"
+                      "md:mt-[10px] md:mr-[6px]",
+                      "xl:text-2xl xl:min-w-[50px] xl:mr-[25px]",
+                      {
+                        "text-my-custom-color group-hover:text-white":
+                          openIndex !== index,
+                        "text-white group-hover:text-my-custom-color":
+                          openIndex === index,
+                      }
                     )}
                   >{`[ ${index + 1} ]`}</span>
 

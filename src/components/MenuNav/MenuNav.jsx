@@ -31,11 +31,22 @@ const MenuNav = () => {
       <div
         className={classNames(
           { hidden: isShowMenu && !isMobileScreen },
-          "bg-black bg-opacity-10 rounded-lg backdrop-blur-md justify-center items-center inline-flex w-12 h-12 p-2.5 md:p-1 gap-2.5 xl:w-20 xl:h-20 xl:p-7 xl:rounded-xl absolute top-[8px] right-[8px] md:top-[12px] md:right-[12px] xl:top-[-10px] xl:right-0 text-xs xl:text-base z-1 index-1 style={{ zIndex: 1 }}"
+          "bg-black bg-opacity-10 rounded-lg backdrop-blur-md justify-center items-center",
+          "inline-flex w-12 h-12 p-2.5",
+          "md:p-1 gap-2.5",
+          "xl:w-20 xl:h-20 xl:p-7 xl:rounded-xl absolute top-[0px] right-[8px]",
+          "md:top-[12px] md:right-[12px] xl:top-[-10px] xl:right-0 text-xs xl:text-base"
         )}
+        style={{ zIndex: 1 }}
       >
         <button type="button" onClick={handleClickOpeMenu}>
-          {!isShowMenu ? "Menu" : "Close"}
+          <span
+            className={classNames(
+              "hover:text-white xl:text-base xl:font-semibold"
+            )}
+          >
+            {!isShowMenu ? "Menu" : "Close"}
+          </span>
         </button>
       </div>
 

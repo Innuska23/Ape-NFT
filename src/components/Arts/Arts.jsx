@@ -4,9 +4,18 @@ import classNames from "classnames";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ArtListItem, { ArtsList } from "../ArtsList/ArtsList";
+
+import ArtList from "../ArtsList/ArtsList";
+import { ARTS_LIST } from "../../constants";
 
 const Arts = () => {
+  const handleSliderPrev = () => {
+    slider?.current?.slickPrev();
+  };
+  const handleSliderNext = () => {
+    slider?.current?.slickNext();
+  };
+
   const slider = React.useRef(null);
 
   const settings = {
@@ -66,9 +75,19 @@ const Arts = () => {
           "xl:px-[124px] xl:mt-[80px]"
         )}
       >
-        {ArtsList.map(({ img, alt }, index) => {
-          return <ArtListItem key={index} img={img} alt={alt} />;
-        })}
+        {ARTS_LIST.map(({ img, alt }, index) => (
+          <ArtList
+            key={index}
+            img={img[0]}
+            loading="lazy"
+            alt={alt}
+            srcSet={`${img[0]} 284w,
+               ${img[1]} 568w,
+               ${img[2]} 1185w,
+               ${img[3]} 2370w`}
+            sizes="(max-width: 1279px) 284px, 1185px"
+          />
+        ))}
       </Slider>
 
       <div
@@ -78,17 +97,19 @@ const Arts = () => {
         )}
       >
         <button
-          onClick={() => slider?.current?.slickPrev()}
+          onClick={handleSliderPrev}
           className={classNames(
-            "text-white text-2xl font-normal font-biro-script-plus leading-normal hover:text-my-custom-color"
+            "text-white text-2xl font-normal font-biro-script-plus leading-normal",
+            "hover:text-my-custom-color"
           )}
         >
           Prev
         </button>
         <button
-          onClick={() => slider?.current?.slickNext()}
+          onClick={handleSliderNext}
           className={classNames(
-            "text-white text-2xl font-normal font-biro-script-plus leading-normal hover:text-my-custom-color"
+            "text-white text-2xl font-normal font-biro-script-plus leading-normal",
+            "hover:text-my-custom-color"
           )}
         >
           Next

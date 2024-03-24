@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const defaultFill = "#1E1E1E";
 
-export const OpenseaIcon = ({ color }) => {
+export const OpenseaIcon = ({ color, ...rest }) => {
   const fills = {
     black: defaultFill,
     white: "white",
@@ -18,6 +18,7 @@ export const OpenseaIcon = ({ color }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="md:w-[24px] md:h-[24px]"
+      {...rest}
     >
       <g clipPath="url(#clip0_45_1318)">
         <path

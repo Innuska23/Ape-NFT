@@ -22,12 +22,7 @@ export default {
         xl: { min: "1280px" },
         custom: { min: "480px", max: "768px" },
       },
-      plugins: [
-        require("tailwindcss-animate"),
-        //  ({
-        //   classes: ["animate-marquee"],
-        // }),
-      ],
+      plugins: [require("tailwindcss-animate")],
     },
   },
   plugins: [],

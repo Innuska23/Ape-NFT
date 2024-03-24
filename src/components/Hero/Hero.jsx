@@ -1,14 +1,16 @@
-import headerSrcMd from "../../images/header/header-md.png";
-import headerSrcSm from "../../images/header/header-sm.png";
-import headerSrcXl from "../../images/header/header-xl.png";
-
 import classNames from "classnames";
-import { getImageSet } from "../../utils/image";
 
-const headerImageSet = getImageSet(
-  [headerSrcSm, headerSrcMd, headerSrcXl],
-  [360, 768, 1280]
-);
+import heroSrcSm from "../../images/hero/hero-sm.png";
+import heroSrcSm2 from "../../images/hero/hero-sm-2x.png";
+import heroSrcSm3 from "../../images/hero/hero-sm-3x.png";
+
+import heroSrcMd from "../../images/hero/hero-md.png";
+import heroSrcMd2 from "../../images/hero/hero-md-2x.png";
+import heroSrcMd3 from "../../images/hero/hero-md-3x.png";
+
+import heroSrcXl from "../../images/hero/hero-xl.png";
+import heroSrcXl2 from "../../images/hero/hero-xl-2x.png";
+import heroSrcXl3 from "../../images/hero/hero-xl-3x.png";
 
 const Hero = () => {
   return (
@@ -16,15 +18,15 @@ const Hero = () => {
       <div
         className={classNames(
           "absolute top-[36px] left-0 w-full px-[8px]",
-          "md:relative",
+          "md:relative md:top-[72px]",
           "xl:px-0"
         )}
       >
         <p
           className={classNames(
             "text-stone-900 text-[16px] font-black text-base font-biro-script-plus leading-[169%]",
-            "md:ml-[72px] md:text-left",
-            "tracking-[0%] xl:text-[24px] xl:leading-[10px] md:ml-[115px] xl:mt-[108px]"
+            "md:ml-[72px] md:text-left md:text-xl",
+            "tracking-[0%] xl:text-[24px] xl:leading-[10px] xl:ml-[115px] xl:mt-[108px]"
           )}
         >
           diD yOu seE iT ?
@@ -59,9 +61,18 @@ const Hero = () => {
 
         <div className={classNames("flex justify-center items-center")}>
           <img
-            sizes="(max-width: 480px) 480w, (max-width: 1279px) 768w, (max-width: 1400px) 1280w"
-            srcSet={headerImageSet}
-            src={headerSrcSm}
+            sizes="(max-width: 480px) 216px, (max-width: 768px) 283px, 463px"
+            srcSet={`${heroSrcSm} 216w, 
+            ${heroSrcSm2} 432w, 
+            ${heroSrcSm3} 4648w, 
+            ${heroSrcMd} 283w,
+            ${heroSrcMd2} 566w,
+            ${heroSrcMd3} 849w,
+            ${heroSrcXl} 463w,
+            ${heroSrcXl2} 926w,
+            ${heroSrcXl3} 1389w,
+            `}
+            src={heroSrcSm}
             alt="Header Image"
             className={classNames(
               "mt-[6px] object-center w-[216px] h-[284px]",
@@ -85,17 +96,24 @@ const Hero = () => {
           >
             <div
               className={classNames(
-                "w-[216px] h-[41px] px-[70px] pt-2.5 bg-stone-900 bg-opacity-10 rounded-lg backdrop-blur-md flex justify-center items-center gap-2.5 mb-[12px]",
-                "md:hidden"
+                "w-[216px] h-[41px] px-[70px] bg-stone-900 bg-opacity-10 rounded-lg backdrop-blur-md flex justify-center items-center gap-2.5 mb-[12px]",
+                "text-center md:hidden"
               )}
             >
               <a href="#mint">
                 <button
                   className={classNames(
-                    "text-black hover:text-white text-base font-black font-right-grotesk leading-[19px]"
+                    "hover:text-black text-white transition-colors duration-300 text-base font-black font-right-grotesk leading-[19px]",
+                    "md:pt-[10px] md:pb-3 md:h-[51px]"
                   )}
                 >
-                  MEET APES
+                  <span
+                    className={classNames(
+                      "justify-center items-center text-center"
+                    )}
+                  >
+                    MEET APES
+                  </span>
                 </button>
               </a>
             </div>
@@ -113,8 +131,8 @@ const Hero = () => {
 
             <div
               className={classNames(
-                "hidden w-[190px] px-[61px] rounded-xl mt-[16px] bg-stone-900 bg-opacity-10 backdrop-blur-md",
-                "md:block",
+                "hidden w-[190px] px-[61px] rounded-xl mt-[16px] bg-stone-900 bg-opacity-10 backdrop-blur-md justify-center items-center",
+                "md:block md:h-[41px] pb-0 text-center",
                 "xl:w-[337px] xl:h-[70px] xl:pt-4 pb-3 xl:pb-5 xl:mt-[28px]"
               )}
             >

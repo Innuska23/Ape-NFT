@@ -5,7 +5,8 @@ const MenuItem = ({ href, text, onClick }) => {
   return (
     <li
       className={classNames(
-        "bg-stone-900 bg-opacity-10 backdrop-blur-md justify-center items-center gap-2.5 flex",
+        "bg-stone-900 bg-opacity-10 backdrop-blur-md justify-center items-center",
+        "gap-2.5 flex z-100",
         "md:h-12 md:w-12 md:p-1",
         "xl:w-20 xl:h-20 xl:p-2.5"
       )}
@@ -19,7 +20,7 @@ const MenuItem = ({ href, text, onClick }) => {
         )}
         onClick={onClick}
       >
-        {text}
+        <span className="hover:text-white">{text}</span>
       </a>
     </li>
   );
@@ -36,7 +37,7 @@ const MenuNavLink = ({ onClick }) => {
     <>
       <nav
         className={classNames(
-          "absolute right-[12px] top-[12px] z-1",
+          "absolute right-[12px] top-[12px] z-1 cursor-pointer",
           "xl:block xl:top-[-10px] xl:right-0"
         )}
       >

@@ -14,7 +14,7 @@ const Banner = () => {
     <div
       className={classNames(
         "h-[52px] pt-1.5 pb-2 w-100  bg-rose-500 overflow-hidden relative",
-        "md:h-[86px]"
+        "xl:h-[86px]"
       )}
     >
       <div
@@ -25,8 +25,7 @@ const Banner = () => {
         <span
           className={classNames(
             "inline-block text-white text-4xl justify-center font-black font-right-grotesk uppercase leading-9 mr-8",
-            "md:text-[52px] md:pt-[6px] md:pb-[16px]",
-            "xl:text-[64px]",
+            "xl:text-[64px] xl:pt-[6px] xl:pb-[16px]",
             { "animate-marquee": animationActive }
           )}
           style={{

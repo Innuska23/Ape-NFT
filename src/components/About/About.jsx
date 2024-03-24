@@ -1,17 +1,19 @@
 import classNames from "classnames";
-import { getImageSet } from "../../utils/image";
 
 import Banner from "../Banner/Banner";
 
 import closeIcon from "../../images/close.svg";
 import aboutSm from "../../images/about/about-sm.png";
-import aboutMd from "../../images/about/about-md.png";
-import aboutXl from "../../images/about/about-xl.png";
+import aboutSm2 from "../../images/about/about-sm-2x.png";
+import aboutSm3 from "../../images/about/about-sm-3x.png";
 
-const aboutImageSet = getImageSet(
-  [aboutSm, aboutMd, aboutXl],
-  [360, 768, 1280]
-);
+import aboutMd from "../../images/about/about-md.png";
+import aboutMd2 from "../../images/about/about-md-2x.png";
+import aboutMd3 from "../../images/about/about-md-3x.png";
+
+import aboutXl from "../../images/about/about-xl.png";
+import aboutXl2 from "../../images/about/about-xl-2x.png";
+import aboutXl3 from "../../images/about/about-xl-3x.png";
 
 const About = () => {
   return (
@@ -19,9 +21,9 @@ const About = () => {
       <div
         id="about"
         className={classNames(
-          "pt-[60px] px-[72px] relative",
-          "md:pt-[80px] md:px-[88px] md:flex md:flex-wrap md:justify-between",
-          "xl:pt-[120px] xl:px-[124px]"
+          "mt-[60px] px-[72px] relative",
+          "md:mt-[80px] md:px-[88px] md:flex md:flex-wrap md:justify-between",
+          "xl:mt-[120px] xl:px-[124px]"
         )}
       >
         <div
@@ -41,7 +43,7 @@ const About = () => {
             a Story that started with{" "}
             <span
               className={classNames(
-                "text-rose-500 text-[40px] font-black font-right-grotesk uppercase leading-10",
+                "text-my-custom-color text-[40px] font-black font-right-grotesk uppercase leading-10",
                 "md:text-6xl leading-[60px] md:w-[269px]",
                 "xl:text-[120px] xl:w-[538px] xl:leading-[120px]"
               )}
@@ -92,7 +94,7 @@ const About = () => {
         <div
           className={classNames(
             "h-24 w-[216px] flex-col justify-start items-center gap-[22px] inline-flex mt-[36px]",
-            "md:w-[269px] md:h-[143px] md:mt-[68px md:gap-[24px]",
+            "md:w-[269px] md:h-[143px] md:mt-[68px] md:gap-[24px]",
             "xl:w-[417px] xl:h-[188px] xl:gap-[36px]  ] xl:mt-[56px]"
           )}
         >
@@ -120,14 +122,24 @@ const About = () => {
           )}
         >
           <img
-            srcSet={aboutImageSet}
+            srcSet={`${aboutSm} 216w, 
+            ${aboutSm2} 432w, 
+            ${aboutSm3} 648w, 
+            ${aboutMd} 313w, 
+            ${aboutMd2} 626w, 
+            ${aboutMd3} 939w, 
+            ${aboutXl} 492w, 
+            ${aboutXl2} 984w
+            ${aboutXl3} 1476w
+            `}
+            sizes="(max-width: 480px) 216px, (max-width: 768px) 313px, 492px"
             src={aboutSm}
-            sizes="(min-width: 360px) 216px, (min-width: 1279px) 313px, (min-width: 1280px) 492px"
             className={classNames(
               "w-[216px] h-[292px]",
               "md:w-[313px] md:h-[422px]",
               "xl:w-[492px] xl:h-[662px]"
             )}
+            alt="About Image"
           />
         </div>
       </div>
