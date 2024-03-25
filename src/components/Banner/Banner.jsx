@@ -1,11 +1,8 @@
-import { useState } from "react";
-
-import "./banner-animation.css";
 import classNames from "classnames";
 
+import "./banner-animation.css";
+
 const Banner = () => {
-  // eslint-disable-next-line
-  const [animationActive, setAnimationActive] = useState(true);
   const texts = ["HAVE NO LIMITS", "BREAK RULES", "DESTROY STEREOTYPES"];
   const extendedTexts = texts.concat(texts);
   const text = extendedTexts.join("      ✕     ");
@@ -24,9 +21,10 @@ const Banner = () => {
       >
         <span
           className={classNames(
-            "inline-block text-white text-4xl justify-center font-black font-right-grotesk uppercase leading-9 mr-8",
+            "inline-block text-white text-4xl justify-center",
+            "font-black font-right-grotesk uppercase leading-9 mr-8",
             "xl:text-[64px] xl:pt-[6px] xl:pb-[16px]",
-            { "animate-marquee": animationActive }
+            "animate-marquee"
           )}
           style={{
             clipOverflow: "hidden",

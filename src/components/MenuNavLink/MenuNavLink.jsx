@@ -20,7 +20,9 @@ const MenuItem = ({ href, text, onClick }) => {
         )}
         onClick={onClick}
       >
-        <span className="hover:text-white">{text}</span>
+        <span className="hover:text-white transition-colors duration-300">
+          {text}
+        </span>
       </a>
     </li>
   );

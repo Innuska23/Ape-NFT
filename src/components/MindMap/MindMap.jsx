@@ -73,16 +73,28 @@ const MindMap = () => {
         )}
       </div>
 
-      <div className="w-[150px] h-6 mt-[24px] justify-center items-center gap-12 inline-flex md:hidden">
+      <div
+        className={classNames(
+          "w-[150px] h-6 mt-[24px] justify-center items-center",
+          "gap-12 inline-flex",
+          "md:hidden"
+        )}
+      >
         <button
           onClick={() => slider?.current?.slickPrev()}
-          className="text-white text-2xl font-normal font-biro-script-plus leading-normal hover:text-my-custom-color"
+          className={classNames(
+            "text-white text-2xl font-normal font-biro-script-plus leading-normal",
+            "hover:text-my-custom-color transition-colors duration-300"
+          )}
         >
           Prev
         </button>
         <button
           onClick={() => slider?.current?.slickNext()}
-          className="text-white text-2xl font-normal font-biro-script-plus leading-normal hover:text-my-custom-color"
+          className={classNames(
+            "text-white text-2xl font-normal font-biro-script-plus",
+            "leading-normal hover:text-my-custom-color transition-colors duration-300"
+          )}
         >
           Next
         </button>

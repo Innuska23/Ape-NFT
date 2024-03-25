@@ -31,13 +31,18 @@ const BurgerLinkItem = ({
       className={classNames(
         colorStyles[color],
         "rounded-lg backdrop-blur-md justify-center items-center inline-flex",
-        "w-12 h-12 p-2.5 gap-2.5",
+        "w-12 h-12 p-2.5 gap-2.5 transition-colors duration-300",
         "xl:w-20 xl:h-20 xl:p-7 xl:rounded-xl"
       )}
       {...rest}
       {...handles}
     >
-      {Icon && <Icon color={iconColor} className="md:w-[24px] md:h-[24px]" />}
+      {Icon && (
+        <Icon
+          color={iconColor}
+          className={classNames("md:w-[24px] md:h-[24px]")}
+        />
+      )}
       {children}
     </a>
   );
@@ -46,7 +51,10 @@ const BurgerLinkItem = ({
 const BurgerLink = ({ color = "black", closeMenu, isForModal, className }) => {
   const handleClose = (e) => {
     e.preventDefault();
-    closeMenu();
+
+    if (closeMenu) {
+      closeMenu();
+    }
   };
 
   const hoverColor = isForModal ? "black" : "white";
@@ -74,6 +82,7 @@ const BurgerLink = ({ color = "black", closeMenu, isForModal, className }) => {
         aria-label="Visit company discord page"
         hoverColor={hoverColor}
       />
+
       <BurgerLinkItem
         color={color}
         Icon={LogomarIcon}
@@ -81,6 +90,7 @@ const BurgerLink = ({ color = "black", closeMenu, isForModal, className }) => {
         aria-label="Visit company logomar page"
         hoverColor={hoverColor}
       />
+
       <BurgerLinkItem
         color={color}
         Icon={OpenseaIcon}
@@ -102,7 +112,7 @@ BurgerLinkItem.propTypes = {
 
 BurgerLink.propTypes = {
   color: PropTypes.oneOf(["black", "white"]),
-  closeMenu: PropTypes.func.isRequired,
+  closeMenu: PropTypes.func,
   isForModal: PropTypes.bool.isRequired,
   className: PropTypes.string,
 };

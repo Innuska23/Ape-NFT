@@ -100,7 +100,7 @@ const Arts = () => {
           onClick={handleSliderPrev}
           className={classNames(
             "text-white text-2xl font-normal font-biro-script-plus leading-normal",
-            "hover:text-my-custom-color"
+            "hover:text-my-custom-color transition-colors duration-300"
           )}
         >
           Prev
@@ -109,7 +109,7 @@ const Arts = () => {
           onClick={handleSliderNext}
           className={classNames(
             "text-white text-2xl font-normal font-biro-script-plus leading-normal",
-            "hover:text-my-custom-color"
+            "hover:text-my-custom-color transition-colors duration-300"
           )}
         >
           Next

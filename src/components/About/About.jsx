@@ -18,7 +18,7 @@ import aboutXl3 from "../../images/about/about-xl-3x.png";
 const About = () => {
   return (
     <>
-      <div
+      <main
         id="about"
         className={classNames(
           "mt-[60px] px-[72px] relative",
@@ -43,13 +43,14 @@ const About = () => {
             a Story that started with{" "}
             <span
               className={classNames(
-                "text-my-custom-color text-[40px] font-black font-right-grotesk uppercase leading-10",
+                "text-my-custom-color text-[40px] font-black",
+                "font-right-grotesk uppercase leading-10",
                 "md:text-6xl leading-[60px] md:w-[269px]",
                 "xl:text-[120px] xl:w-[538px] xl:leading-[120px]"
               )}
             >
               one simple{" "}
-              <span className="md:hidden">
+              <span className={classNames("md:hidden")}>
                 <br />
               </span>{" "}
               ape
@@ -59,7 +60,8 @@ const About = () => {
 
         <div
           className={classNames(
-            "text-base text-white text-right font-normal font-messina-sans-mono uppercase leading-[19px] mt-[16px]",
+            "text-base text-white text-right font-normal font-messina-sans-mono",
+            "uppercase leading-[19px] mt-[16px]",
             "md:mt-0",
             "xl:text-2xl  xl:leading-[29px]"
           )}
@@ -93,7 +95,8 @@ const About = () => {
 
         <div
           className={classNames(
-            "h-24 w-[216px] flex-col justify-start items-center gap-[22px] inline-flex mt-[36px]",
+            "h-24 w-[216px] flex-col justify-start items-center",
+            "gap-[22px] inline-flex mt-[36px]",
             "md:w-[269px] md:h-[143px] md:mt-[68px] md:gap-[24px]",
             "xl:w-[417px] xl:h-[188px] xl:gap-[36px]  ] xl:mt-[56px]"
           )}
@@ -104,7 +107,8 @@ const About = () => {
 
           <p
             className={classNames(
-              "text-center text-white text-xs font-normal font-messina-sans-mono uppercase leading-[14px]",
+              "text-center text-white text-xs font-normal font-messina-sans-mono",
+              "uppercase leading-[14px]",
               "md:text-base md:leading-[19px]",
               "xl:text-2xl xl:leading-[29px]"
             )}
@@ -142,7 +146,7 @@ const About = () => {
             alt="About Image"
           />
         </div>
-      </div>
+      </main>
 
       <Banner />
     </>

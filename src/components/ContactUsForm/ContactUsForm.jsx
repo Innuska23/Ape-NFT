@@ -70,7 +70,9 @@ const ContactUsForm = () => {
           <div className={classNames("relative flex")}>
             <label
               className={classNames(
-                "h-full w-12 p-2.5 bg-stone-900 rounded-tl-lg rounded-bl-lg backdrop-blur-md justify-center items-center gap-2.5 inline-flex",
+                "h-full w-12 p-2.5 bg-stone-900 rounded-tl-lg",
+                "rounded-bl-lg backdrop-blur-md justify-center items-center",
+                "gap-2.5 inline-flex",
                 "md:h-[48px] md:w-[48px]",
                 "xl:h-[64px] xl:w-[64px]"
               )}
@@ -100,7 +102,8 @@ const ContactUsForm = () => {
             {errors.discord && touched.discord && (
               <div
                 className={classNames(
-                  "absolute right-0 bottom-[-13px] text-[10px] font-normal font-messina-sans-mono uppercase leading-3  text-accent text-rose-500",
+                  "absolute right-0 bottom-[-13px] text-[10px] font-normal",
+                  "font-messina-sans-mono uppercase leading-3 text-accent text-rose-500",
                   "xl:bottom-[-18px] xl:text-xs"
                 )}
               >
@@ -112,7 +115,8 @@ const ContactUsForm = () => {
           <div className={classNames("relative flex")}>
             <label
               className={classNames(
-                "h-full w-12 p-2.5 bg-stone-900 rounded-tl-lg rounded-bl-lg backdrop-blur-md justify-center items-center gap-2.5 inline-flex",
+                "h-full w-12 p-2.5 bg-stone-900 rounded-tl-lg rounded-bl-lg",
+                "backdrop-blur-md justify-center items-center gap-2.5 inline-flex",
                 "md:h-[48px] md:w-[48px]",
                 "xl:h-[64px] xl:w-[64px]"
               )}
@@ -127,7 +131,8 @@ const ContactUsForm = () => {
               className={classNames(
                 "w-full pl-[24px] bg-opacity-25 placeholder:opacity-25",
                 "border uppercase bg-stone-900 ",
-                "rounded-br-lg rounded-tr-lg text-xs xl:rounded-br-xl xl:text-base xl:rounded-tr-xl",
+                "rounded-br-lg rounded-tr-lg text-xs",
+                "xl:rounded-br-xl xl:text-base xl:rounded-tr-xl",
                 "outline-none",
                 {
                   "text-white border-stone-900": !(
@@ -142,7 +147,8 @@ const ContactUsForm = () => {
             {errors.address && touched.address && (
               <div
                 className={classNames(
-                  "absolute right-0 bottom-[-13px] text-[10px] font-normal font-messina-sans-mono uppercase leading-3 text-rose-500",
+                  "absolute right-0 bottom-[-13px] text-[10px]",
+                  "font-normal font-messina-sans-mono uppercase leading-3 text-rose-500",
                   "xl:text-xs xl:bottom-[-18px]"
                 )}
               >
@@ -155,14 +161,18 @@ const ContactUsForm = () => {
             type="submit"
             disabled={isSubmitting}
             className={classNames(
-              "h-[41px] px-[107px] pt-2.5 pb-3 bg-rose-500 rounded-lg backdrop-blur-md justify-center items-center gap-2.5 inline-flex",
+              "h-[41px] px-[107px] pt-2.5 pb-3 ",
+              "justify-center items-center gap-2.5 inline-flex",
+              "bg-rose-500 rounded-lg backdrop-blur-md",
               "md:h-[41px]",
               "xl:h-[70px]"
             )}
           >
             <span
               className={classNames(
-                "text-white text-base hover:text-black font-black font-right-grotesk leading-[19px] uppercase",
+                " font-black font-right-grotesk leading-[19px]",
+                "text-white text-base hover:text-black uppercase",
+                "transition-colors duration-300",
                 "xl:text-[28px] xl:leading-[34px]"
               )}
             >

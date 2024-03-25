@@ -24,7 +24,8 @@ const Hero = () => {
       >
         <p
           className={classNames(
-            "text-stone-900 text-[16px] font-black text-base font-biro-script-plus leading-[169%]",
+            "text-stone-900 text-[16px] font-black text-base",
+            "font-biro-script-plus leading-[169%]",
             "md:ml-[72px] md:text-left md:text-xl",
             "tracking-[0%] xl:text-[24px] xl:leading-[10px] xl:ml-[115px] xl:mt-[108px]"
           )}
@@ -35,8 +36,10 @@ const Hero = () => {
 
       <h1
         className={classNames(
-          "text-stone-900 text-[44px] mt-[12px] font-black font-right-grotesk tracking-[1%] leading-44 leading-[110%]",
-          "md:text-[92px] md:mt-[75px] md:text-left md:pl-[73px] md:gap-x-[165px] md:flex md:pr-70px",
+          "text-stone-900 text-[44px] mt-[12px] font-black",
+          "font-right-grotesk tracking-[1%] leading-44 leading-[110%]",
+          "md:text-[92px] md:mt-[75px] md:text-left md:pl-[73px]",
+          "md:gap-x-[165px] md:flex md:pr-70px",
           "xl:text-[164px] xl:leading-[175px] xl:mt-[40px] xl:pl-[115px] xl:gap-x-[250px]"
         )}
       >
@@ -51,7 +54,8 @@ const Hero = () => {
       >
         <p
           className={classNames(
-            "text-stone-900 text-base font-black font-biro-script-plus mt-[8px] leading-[110%]",
+            "text-stone-900 text-base font-black font-biro-script-plus",
+            "mt-[8px] leading-[110%]",
             "md:mt-[16px] md:text-xl",
             "xl:text-2xl xl:mt-[30px]"
           )}
@@ -96,14 +100,17 @@ const Hero = () => {
           >
             <div
               className={classNames(
-                "w-[216px] h-[41px] px-[70px] bg-stone-900 bg-opacity-10 rounded-lg backdrop-blur-md flex justify-center items-center gap-2.5 mb-[12px]",
+                "w-[216px] h-[41px] px-[70px] bg-stone-900 bg-opacity-10",
+                "rounded-lg backdrop-blur-md flex justify-center items-center",
+                "gap-2.5 mb-[12px]",
                 "text-center md:hidden"
               )}
             >
               <a href="#mint">
                 <button
                   className={classNames(
-                    "hover:text-black text-white transition-colors duration-300 text-base font-black font-right-grotesk leading-[19px]",
+                    "hover:text-black text-white transition-colors duration-300",
+                    "text-base font-black font-right-grotesk leading-[19px]",
                     "md:pt-[10px] md:pb-3 md:h-[51px]"
                   )}
                 >
@@ -120,7 +127,8 @@ const Hero = () => {
 
             <p
               className={classNames(
-                "text-center w-[217px] font-messina-sans-mono text-stone-900 text-xs font-normal font-['Messina Sans Mono'] uppercase leading-[14px] mt-[12px]",
+                "text-center w-[217px] font-messina-sans-mono text-stone-900",
+                "text-xs font-normal font-messina-sans-mono uppercase leading-[14px] mt-[12px]",
                 "md:text-justify md:w-[190px] md:indent-16",
                 "xl:w-[337px] xl:mt-[40px] xl:leading-[19px] xl:text-[16px] xl:indent-20"
               )}
@@ -131,15 +139,17 @@ const Hero = () => {
 
             <div
               className={classNames(
-                "hidden w-[190px] px-[61px] rounded-xl mt-[16px] bg-stone-900 bg-opacity-10 backdrop-blur-md justify-center items-center",
-                "md:block md:h-[41px] pb-0 text-center",
-                "xl:w-[337px] xl:h-[70px] xl:pt-4 pb-3 xl:pb-5 xl:mt-[28px]"
+                "bg-opacity-10 backdrop-blur-md rounded-xl bg-stone-900",
+                "hidden w-[190px] px-[61px] mt-[16px]",
+                "md:flex md:justify-center md:items-center md:h-[41px] md:pb-0",
+                "xl:w-[337px] xl:h-[70px] xl:pt-4 xl:pb-5 xl:mt-[28px]"
               )}
             >
               <a href="#mint">
                 <button
                   className={classNames(
-                    "text-black hover:text-white text-base font-black font-right-grotesk leading-[19px]",
+                    "text-black hover:text-white text-base font-black",
+                    "font-right-grotesk leading-[19px]",
                     "xl:text-[28px] xl:leading-[34px]"
                   )}
                 >

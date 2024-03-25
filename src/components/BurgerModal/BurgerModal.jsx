@@ -11,11 +11,14 @@ const ListItemModal = ({ href, text, onClose }) => {
       <a
         href={href}
         className={classNames(
-          "font-semibold font-messina-sans-mono hover:my-custom-color"
+          "font-semibold font-messina-sans-mono hover:text-my-custom-color",
+          "transition-colors duration-300"
         )}
         onClick={onClose}
       >
-        <span className="hover:text-my-custom-color">{text}</span>
+        <span className="hover:text-my-custom-color transition-colors duration-300">
+          {text}
+        </span>
       </a>
     </li>
   );
@@ -50,7 +53,7 @@ const BurgerModal = ({ onClose }) => {
         <nav
           className={classNames(
             "w-[121px] flex-col justify-start items-center gap-4 inline-flex",
-            "hover:text-my-custom-color"
+            "hover:text-my-custom-color transition-colors duration-300"
           )}
         >
           <ul className={classNames("space-y-4 gap-4 text-2xl w-full")}>

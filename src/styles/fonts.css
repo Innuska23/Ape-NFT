@@ -177,22 +177,6 @@
   font-style: normal;
 }
 
-/* @font-face {
-  font-family: "Right Grotesk";
-  src: url("../fonts/RightGrotesk/rightgrotesk-spatialblack.otf")
-    format("opentype");
-  font-weight: 900;
-  font-style: normal;
-} */
-
-/* @font-face {
-  font-family: "Right Grotesk";
-  src: url("../fonts/RightGrotesk/RightGrotesk-TightMedium.otf")
-    format("opentype");
-  font-weight: 500;
-  font-style: normal;
-} */
-
 @font-face {
   font-family: "Right Grotesk";
   src: url("../fonts/RightGrotesk/RightGrotesk-WideMedium.otf")
