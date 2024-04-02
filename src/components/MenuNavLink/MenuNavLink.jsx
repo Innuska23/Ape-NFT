@@ -20,7 +20,12 @@ const MenuItem = ({ href, text, onClick }) => {
         )}
         onClick={onClick}
       >
-        <span className="hover:text-white transition-colors duration-300">
+        <span
+          className={classNames(
+            "hover:text-white focus:text-white",
+            "transition-colors duration-300"
+          )}
+        >
           {text}
         </span>
       </a>
@@ -39,7 +44,7 @@ const MenuNavLink = ({ onClick }) => {
     <>
       <nav
         className={classNames(
-          "absolute right-[12px] top-[12px] z-1 cursor-pointer",
+          "absolute right-[12px] top-[12px] z-1 cursor-pointer uppercase",
           "xl:block xl:top-[-10px] xl:right-0"
         )}
       >

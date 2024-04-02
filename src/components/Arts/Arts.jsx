@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import ArtList from "../ArtsList/ArtsList";
-import { ARTS_LIST } from "../../constants";
+import { ARTS_LIST } from "../../data";
 
 const Arts = () => {
   const handleSliderPrev = () => {
@@ -28,9 +28,17 @@ const Arts = () => {
     className: "md:hidden",
     responsive: [
       {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 1.25,
+          infinite: false,
+          slidesToScroll: 1,
+        },
+      },
+      {
         breakpoint: 767,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.5,
           infinite: false,
           slidesToScroll: 1,
         },
@@ -70,7 +78,8 @@ const Arts = () => {
         ref={slider}
         {...settings}
         className={classNames(
-          "mt-[24px] px-[72px] gap-[24px] flex justify-center items-center",
+          // px-[72px
+          "mt-[24px] pl-[72px] gap-[24px] flex justify-center items-center",
           "md:px-[88px] md:gap-[24px] md:mt-[40px]",
           "xl:px-[124px] xl:mt-[80px]"
         )}

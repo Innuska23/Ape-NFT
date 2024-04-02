@@ -66,20 +66,23 @@ const Hero = () => {
         <div className={classNames("flex justify-center items-center")}>
           <img
             sizes="(max-width: 480px) 216px, (max-width: 768px) 283px, 463px"
-            srcSet={`${heroSrcSm} 216w, 
-            ${heroSrcSm2} 432w, 
-            ${heroSrcSm3} 4648w, 
-            ${heroSrcMd} 283w,
-            ${heroSrcMd2} 566w,
-            ${heroSrcMd3} 849w,
-            ${heroSrcXl} 463w,
-            ${heroSrcXl2} 926w,
-            ${heroSrcXl3} 1389w,
-            `}
+            srcSet={`
+      ${heroSrcSm} 216w,
+      ${heroSrcSm2} 432w,
+      ${heroSrcSm3} 4648w,
+      ${heroSrcMd} 283w,
+      ${heroSrcMd2} 566w,
+      ${heroSrcMd3} 849w,
+      ${heroSrcXl} 463w,
+      ${heroSrcXl2} 926w,
+      ${heroSrcXl3} 1389w
+    `}
             src={heroSrcSm}
+            loading="lazy"
             alt="Header Image"
             className={classNames(
-              "mt-[6px] object-center w-[216px] h-[284px]",
+              "mt-[6px] object-center",
+              "w-[216px] h-[284px]",
               "md:mt-0 md:w-[283px] md:h-[386px] md:absolute md:left-[206px] md:bottom-0",
               "xl:h-[612px] xl:w-[463px] xl:left-[365px]"
             )}
@@ -106,23 +109,23 @@ const Hero = () => {
                 "text-center md:hidden"
               )}
             >
-              <a href="#mint">
-                <button
+              <button
+                href="#mint"
+                type="button"
+                className={classNames(
+                  "hover:text-black focus:text-black text-white transition-colors duration-300",
+                  "text-base font-black font-right-grotesk leading-[19px]",
+                  "md:pt-[10px] md:pb-3 md:h-[51px]"
+                )}
+              >
+                <span
                   className={classNames(
-                    "hover:text-black text-white transition-colors duration-300",
-                    "text-base font-black font-right-grotesk leading-[19px]",
-                    "md:pt-[10px] md:pb-3 md:h-[51px]"
+                    "justify-center items-center text-center"
                   )}
                 >
-                  <span
-                    className={classNames(
-                      "justify-center items-center text-center"
-                    )}
-                  >
-                    MEET APES
-                  </span>
-                </button>
-              </a>
+                  MEET APES
+                </span>
+              </button>
             </div>
 
             <p
@@ -145,16 +148,16 @@ const Hero = () => {
                 "xl:w-[337px] xl:h-[70px] xl:pt-4 xl:pb-5 xl:mt-[28px]"
               )}
             >
-              <a href="#mint">
-                <button
-                  className={classNames(
-                    "text-black hover:text-white text-base font-black",
-                    "font-right-grotesk leading-[19px]",
-                    "xl:text-[28px] xl:leading-[34px]"
-                  )}
-                >
-                  MEET APES
-                </button>
+              <a
+                href="#mint"
+                className={classNames(
+                  "text-black hover:text-white focus:text-white text-base font-black",
+                  "font-right-grotesk leading-[19px]",
+                  "xl:text-[28px] xl:leading-[34px]",
+                  "transition-colors duration-300"
+                )}
+              >
+                MEET APES
               </a>
             </div>
           </div>

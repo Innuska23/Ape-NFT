@@ -10,6 +10,7 @@ import Faq from "./components/FAQ/Faq";
 import Hero from "./components/Hero/Hero";
 import Arts from "./components/Arts/Arts";
 import ContactUs from "./components/ContactUs/ContactUs";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
       <Arts />
       <ContactUs />
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

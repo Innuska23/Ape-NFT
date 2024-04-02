@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { MIND_MAPS_CARDS } from "../../constants";
+import { MIND_MAPS_CARDS } from "../../data";
 import MindMapListItem from "../MindMapListItem/MindMapListemItem";
 
 const MindMap = () => {
@@ -37,7 +37,7 @@ const MindMap = () => {
 
       <Slider ref={slider} {...settings} className="mt-[24px] md:hidden">
         {MIND_MAPS_CARDS.map(
-          ({ title, className, imgSrc, subtitle, href }, index) => {
+          ({ title, className, imgSrc, subtitle, href, alt }, index) => {
             return (
               <MindMapListItem
                 key={index}
@@ -46,6 +46,7 @@ const MindMap = () => {
                 imgSrc={imgSrc}
                 subtitle={subtitle}
                 href={href}
+                alt={alt}
               />
             );
           }
@@ -81,19 +82,22 @@ const MindMap = () => {
         )}
       >
         <button
+          type="button"
           onClick={() => slider?.current?.slickPrev()}
           className={classNames(
             "text-white text-2xl font-normal font-biro-script-plus leading-normal",
-            "hover:text-my-custom-color transition-colors duration-300"
+            "hover:text-my-custom-color focus:text-my-custom-color transition-colors duration-300"
           )}
         >
           Prev
         </button>
         <button
+          type="button"
           onClick={() => slider?.current?.slickNext()}
           className={classNames(
             "text-white text-2xl font-normal font-biro-script-plus",
-            "leading-normal hover:text-my-custom-color transition-colors duration-300"
+            "leading-normal hover:text-my-custom-color focus:text-my-custom-color",
+            "transition-colors duration-300"
           )}
         >
           Next

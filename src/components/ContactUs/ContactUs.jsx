@@ -34,7 +34,7 @@ const ContactUs = () => {
           <img
             className={classNames("w-[36px] h-[36px]")}
             src={closeSvg}
-            alt="close svg"
+            alt="сlose svg"
           />
         </div>
         <p

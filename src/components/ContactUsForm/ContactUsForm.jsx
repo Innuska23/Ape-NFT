@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import classNames from "classnames";
@@ -6,11 +6,25 @@ import classNames from "classnames";
 import discord from "../../images/form/discord.svg";
 import mask from "../../images/form/mask.svg";
 
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const saveFormDataToLocalStorage = (values) => {
+  localStorage.setItem("formData", JSON.stringify(values));
+};
+
 const ContactUsForm = () => {
-  const initialValues = {
+  const [initialValues, setInitialValues] = useState({
     discord: "",
     address: "",
-  };
+  });
+
+  useEffect(() => {
+    const storedFormData = localStorage.getItem("formData");
+    if (storedFormData) {
+      setInitialValues(JSON.parse(storedFormData));
+    }
+  }, []);
 
   const validationSchema = Yup.object({
     discord: Yup.string()
@@ -21,8 +35,6 @@ const ContactUsForm = () => {
       .matches(/^[A-Za-z0-9]{19}$/, "Wrong ADDRESS, 19 characters"),
   });
 
-  const [submissionStatus, setSubmissionStatus] = useState(null);
-
   const handleSubmit = async (
     values,
     { setSubmitting, setStatus, resetForm }
@@ -30,21 +42,32 @@ const ContactUsForm = () => {
     setSubmitting(true);
     try {
       console.log("Form values:", values);
+      saveFormDataToLocalStorage(values);
       setStatus({ success: true });
       resetForm();
-      setSubmissionStatus("success");
+      toast.success("Form successfully submitted!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } catch (error) {
       console.error(error);
       setStatus({ error: "Submission failed!" });
-      setSubmissionStatus("error");
+      toast.error("Form submission failed!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } finally {
       setSubmitting(false);
-    }
-  };
-
-  const handleFieldClick = () => {
-    if (submissionStatus === "success") {
-      setSubmissionStatus(null);
     }
   };
 
@@ -62,11 +85,6 @@ const ContactUsForm = () => {
             "xl:w-[397px] xl:mt-[40px] xl:gap-y-6"
           )}
         >
-          {submissionStatus === "success" && (
-            <div className={classNames("text-green-500", "xl:text-2xl")}>
-              Form successfully submitted!
-            </div>
-          )}
           <div className={classNames("relative flex")}>
             <label
               className={classNames(
@@ -97,7 +115,6 @@ const ContactUsForm = () => {
                     errors.discord && touched.discord,
                 }
               )}
-              onClick={handleFieldClick}
             />
             {errors.discord && touched.discord && (
               <div
@@ -142,7 +159,6 @@ const ContactUsForm = () => {
                     errors.address && touched.address,
                 }
               )}
-              onClick={handleFieldClick}
             />
             {errors.address && touched.address && (
               <div

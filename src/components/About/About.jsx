@@ -95,14 +95,18 @@ const About = () => {
 
         <div
           className={classNames(
-            "h-24 w-[216px] flex-col justify-start items-center",
+            "h-24 min-w-[216px] flex-col justify-start items-center",
             "gap-[22px] inline-flex mt-[36px]",
             "md:w-[269px] md:h-[143px] md:mt-[68px] md:gap-[24px]",
             "xl:w-[417px] xl:h-[188px] xl:gap-[36px]  ] xl:mt-[56px]"
           )}
         >
           <div className={classNames("w-6 h-6 relative", "xl:w-9 xl:h-9 ")}>
-            <img src={closeIcon} className={classNames("xl:w-9 xl:h-9")} />
+            <img
+              src={closeIcon}
+              alt="Close icon"
+              className={classNames("xl:w-9 xl:h-9")}
+            />
           </div>
 
           <p
@@ -133,13 +137,14 @@ const About = () => {
             ${aboutMd2} 626w, 
             ${aboutMd3} 939w, 
             ${aboutXl} 492w, 
-            ${aboutXl2} 984w
-            ${aboutXl3} 1476w
+            ${aboutXl2} 984w,
+            ${aboutXl3} 1476w,
             `}
             sizes="(max-width: 480px) 216px, (max-width: 768px) 313px, 492px"
             src={aboutSm}
+            loading="lazy"
             className={classNames(
-              "w-[216px] h-[292px]",
+              "min-w-[216px] min-h-[292px]",
               "md:w-[313px] md:h-[422px]",
               "xl:w-[492px] xl:h-[662px]"
             )}

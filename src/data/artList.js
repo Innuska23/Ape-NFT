@@ -75,18 +75,18 @@ export const ARTS_LIST = [
   },
   {
     img: [arts_sm_7_1x, arts_sm_7_2x, arts_md_7_1x, arts_md_7_2x],
-    alt: "Art6",
+    alt: "Art7",
   },
   {
     img: [arts_sm_8_1x, arts_sm_8_2x, arts_md_8_1x, arts_md_8_2x],
-    alt: "Art6",
+    alt: "Art8",
   },
   {
     img: [arts_sm_9_1x, arts_sm_9_2x, arts_md_9_1x, arts_md_9_2x],
-    alt: "Art6",
+    alt: "Art9",
   },
   {
     img: [arts_sm_10_1x, arts_sm_10_2x, arts_md_10_1x, arts_md_10_2x],
-    alt: "Art6",
+    alt: "Art10",
   },
 ];

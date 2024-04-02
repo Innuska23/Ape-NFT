@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classNames from "classnames";
 
-import { FAQ_LIST } from "../../constants";
+import { FAQ_LIST } from "../../data";
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(0);
@@ -19,17 +19,14 @@ const Faq = () => {
         "xl:mt-[120px] xl:px-[124px]"
       )}
     >
-      <h2>
-        <button
-          onClick={handleFaqClick(null)}
-          className={classNames(
-            "text-white text-[44px] font-black font-right-grotesk uppercase leading-10",
-            "md:cursor-pointer md:text-[80px] ",
-            "xl:text-[160px] xl:leading-[160px]"
-          )}
-        >
-          FAQ
-        </button>
+      <h2
+        className={classNames(
+          "text-white text-[44px] font-black font-right-grotesk uppercase leading-10",
+          "md:text-[80px]",
+          "xl:text-[160px] xl:leading-[160px]"
+        )}
+      >
+        FAQ
       </h2>
       <ul
         className={classNames(
@@ -54,7 +51,7 @@ const Faq = () => {
               {openIndex === index && (
                 <div
                   className={classNames(
-                    "md:absolute md:rotate-[-16deg] md:rounded-2xl",
+                    "hidden md:block md:absolute md:rotate-[-16deg] md:rounded-2xl",
                     "md:w-[148px] md:h-[183px] md:left-[16.64px] md:top-[-4.77px]",
                     "xl:rotate-[-8deg] xl:w-[248px] xl:h-[282px] xl:top-[-9.04px]"
                   )}
@@ -63,10 +60,10 @@ const Faq = () => {
                     loading="lazy"
                     sizes="(max-width: 768px) 183px, 514px"
                     srcSet={`
-                    ${faq.imageSrc[0]} 183w,
-                    ${faq.imageSrc[1]} 366w,
-                    ${faq.imageSrc[0]} 270w,
-                    ${faq.imageSrc[1]} 514w,
+                      ${faq.imageSrc[0]} 183w,
+                      ${faq.imageSrc[1]} 366w,
+                      ${faq.imageSrc[0]} 270w,
+                      ${faq.imageSrc[1]} 514w
                     `}
                     src={faq.imageSrc[0]}
                     alt={faq.alt}
@@ -81,6 +78,7 @@ const Faq = () => {
 
               <div>
                 <button
+                  type="button"
                   onClick={handleFaqClick(index)}
                   className={classNames(
                     "w-full block text-xl font-black font-right-grotesk",
@@ -89,10 +87,9 @@ const Faq = () => {
                     "xl:w-[635px] xl:text-[64px] xl:leading-[64px]",
                     "flex group transition-colors duration-300",
                     {
-                      "text-white hover:text-my-custom-color":
+                      "text-white hover:text-my-custom-color focus:text-my-custom-color":
                         openIndex !== index,
-                      "text-my-custom-color hover:text-white":
-                        openIndex === index,
+                      "text-my-custom-color": openIndex === index,
                     }
                   )}
                 >
@@ -104,11 +101,11 @@ const Faq = () => {
                       "display-inline-block vertical-align-baseline mt-[4px]",
                       "md:mt-[10px] md:mr-[6px]",
                       "xl:text-2xl xl:min-w-[50px] xl:mr-[25px]",
+                      "transition-colors duration-300",
                       {
-                        "text-my-custom-color group-hover:text-white":
+                        "text-my-custom-color group-hover:text-white group-focus:text-white":
                           openIndex !== index,
-                        "text-white group-hover:text-my-custom-color":
-                          openIndex === index,
+                        "text-white": openIndex === index,
                       }
                     )}
                   >{`[ ${index + 1} ]`}</span>

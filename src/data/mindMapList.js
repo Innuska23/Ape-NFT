@@ -22,6 +22,7 @@ export const MIND_MAPS_CARDS = [
   {
     title: "Learn more in mind map",
     imgSrc: upLeftArrow,
+    alt: "upLeftArrow",
     className: "bg-rose-500",
     href: "https://www.mindmup.com/",
   },

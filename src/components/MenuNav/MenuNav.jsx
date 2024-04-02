@@ -22,6 +22,14 @@ const MenuNav = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (isShowMenu && isMobileScreen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [isShowMenu, isMobileScreen]);
+
   const handleClickOpeMenu = () => {
     setIsShowMenu((prevState) => !prevState);
   };
@@ -42,7 +50,8 @@ const MenuNav = () => {
         <button type="button" onClick={handleClickOpeMenu}>
           <span
             className={classNames(
-              "hover:text-white xl:text-base xl:font-semibold transition-colors duration-300"
+              "hover:text-white focus:text-white xl:text-base xl:font-semibold",
+              "transition-colors duration-300"
             )}
           >
             {!isShowMenu ? "Menu" : "Close"}

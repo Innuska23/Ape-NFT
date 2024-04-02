@@ -1,5 +1,4 @@
 import classNames from "classnames";
-
 import "./banner-animation.css";
 
 const Banner = () => {
@@ -10,26 +9,25 @@ const Banner = () => {
   return (
     <div
       className={classNames(
-        "h-[52px] pt-1.5 pb-2 w-100  bg-rose-500 overflow-hidden relative",
+        "h-[52px] bg-rose-500 overflow-hidden relative flex justify-center items-center",
         "xl:h-[86px]"
       )}
     >
       <div
         className={classNames(
-          "whitespace-nowrap w-100 overflow-hidden animate-scroll"
+          "whitespace-nowrap overflow-hidden animate-scroll",
+          "h-full"
         )}
       >
         <span
           className={classNames(
-            "inline-block text-white text-4xl justify-center",
+            "inline-block text-white text-4xl h-full",
             "font-black font-right-grotesk uppercase leading-9 mr-8",
             "xl:text-[64px] xl:pt-[6px] xl:pb-[16px]",
+            "flex items-center",
             "animate-marquee"
           )}
-          style={{
-            clipOverflow: "hidden",
-            margin: "0px 24px",
-          }}
+          style={{ clipOverflow: "hidden", margin: "0px 24px" }}
         >
           {text}
         </span>
